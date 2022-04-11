@@ -1,0 +1,14 @@
+development.driver=com.mysql.jdbc.Driver
+development.username=devaccess
+development.password=devaccess123
+development.url=jdbc:mysql://localhost/dev
+
+production.driver=com.mysql.jdbc.Driver
+production.username=prodaccess
+production.password=prodaccess657
+production.url=jdbc:mysql://localhost/prod
+
+development.test.driver=com.mysql.jdbc.Driver
+develppment.test.username=testaccess
+development.test.password=testaccess321
+development.test.url=jdbc:mysql://localhost/test
