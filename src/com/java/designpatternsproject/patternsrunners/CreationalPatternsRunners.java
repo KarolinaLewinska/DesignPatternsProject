@@ -6,8 +6,13 @@ import com.java.designpatternsproject.creational.factory.ShopManagerDE;
 import com.java.designpatternsproject.creational.factory.ShopManagerFactory;
 import com.java.designpatternsproject.creational.factory.ShopManagerPL;
 import com.java.designpatternsproject.creational.factory.ShopPL;
+import com.java.designpatternsproject.creational.prototype.ImageJPG;
+import com.java.designpatternsproject.creational.prototype.ImagePNG;
 import com.java.designpatternsproject.creational.singleton.ConfigFileSingleton;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class CreationalPatternsRunners {
@@ -49,5 +54,25 @@ public class CreationalPatternsRunners {
         ShopPL shopPLCasted = (ShopPL) shopPL;
         shopPLCasted.setNipNumber("09845943212");
         shopManagerPL.showShopData(shopPL);
+    }
+
+    public static void runPrototype() {
+        try {
+            BufferedImage bufferedPNG = ImageIO.read(new File("src/com/java/designpatternsproject/creational/prototype/explosion.png"));
+            BufferedImage bufferedJPG = ImageIO.read(new File("src/com/java/designpatternsproject/creational/prototype/owl.jpeg"));
+
+            ImagePNG imagePNG = new ImagePNG("explosion", ".png", bufferedPNG);
+            ImagePNG clonePNG = (ImagePNG) imagePNG.clone();
+
+            ImageJPG imageJPG = new ImageJPG("owl", ".jpeg", bufferedJPG);
+            ImageJPG cloneJPG = (ImageJPG) imageJPG.clone();
+
+            if (imagePNG.imgName.equals(clonePNG.imgName) && imageJPG.picture == cloneJPG.picture) {
+                System.out.println(clonePNG.imgName + " is the copy of " + imagePNG.imgName);
+                System.out.println(cloneJPG.imgName + " is the copy of " + imageJPG.imgName);
+            }
+        } catch (IOException exc) {
+            throw new RuntimeException("Exception occurred during loading image file");
+        }
     }
 }
