@@ -2,10 +2,11 @@
 Own implementations of desing patterns
 
 ## Creational patterns
-- singleton
-- factory
-- prototype
+- Singleton
+- Factory
+- Prototype
 
 ## Structural patterns
+- Adapter
 
 ## Behavioral patterns
