@@ -9,25 +9,25 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Date;
 
 public class ConfigFileSingleton {
-    private static volatile ConfigFileSingleton configFileSingletonInstance;
+    private static volatile ConfigFileSingleton CONFIG_FILE_INSTANCE;
 
-    Path configFilePath = FileSystems.getDefault().getPath("src/com/java/designpatternsproject/creational/singleton/", "dbconfig.txt");
-    BasicFileAttributeView fileAttrView = Files.getFileAttributeView(configFilePath, BasicFileAttributeView.class);
-    BasicFileAttributes fileAttr = fileAttrView .readAttributes();
+    private final Path CONFIG_FILE_PATH = FileSystems.getDefault().getPath("src/com/java/designpatternsproject/creational/singleton/", "dbconfig.txt");
+    private final BasicFileAttributeView FILE_ATR_VIEW = Files.getFileAttributeView(CONFIG_FILE_PATH, BasicFileAttributeView.class);
+    private final BasicFileAttributes FILE_ATTR = FILE_ATR_VIEW.readAttributes();
 
-    Date creationTime = new Date(fileAttr.creationTime().toMillis());
-    Date lastAccessTime = new Date(fileAttr.lastAccessTime().toMillis());
-    Date lastModifiedTime = new Date(fileAttr.lastModifiedTime().toMillis());
-    long fileSize = fileAttr.size();
+    private Date creationTime = new Date(FILE_ATTR.creationTime().toMillis());
+    private Date lastAccessTime = new Date(FILE_ATTR.lastAccessTime().toMillis());
+    private Date lastModifiedTime = new Date(FILE_ATTR.lastModifiedTime().toMillis());
+    private long fileSize = FILE_ATTR.size();
 
     private ConfigFileSingleton() throws IOException {}
 
     public static synchronized ConfigFileSingleton getInstance() throws Exception {
         try {
-            if (configFileSingletonInstance == null) {
-                configFileSingletonInstance = new ConfigFileSingleton();
+            if (CONFIG_FILE_INSTANCE == null) {
+                CONFIG_FILE_INSTANCE = new ConfigFileSingleton();
             }
-            return configFileSingletonInstance;
+            return CONFIG_FILE_INSTANCE;
         } catch (Exception exc) {
             exc.printStackTrace();
             throw new Exception("Exception occurred during creating singleton instance");
@@ -35,7 +35,7 @@ public class ConfigFileSingleton {
     }
 
     public Path getConfigFilePath() {
-        return configFilePath;
+        return CONFIG_FILE_PATH;
     }
 
     public Date getCreationTime() {

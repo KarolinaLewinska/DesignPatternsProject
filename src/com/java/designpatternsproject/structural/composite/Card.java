@@ -19,7 +19,7 @@ public abstract class Card {
         this.cardValue = BigDecimal.ZERO;
     }
 
-    abstract void printCardData();
+    public abstract void printCardData();
 
     private String generateCardId() {
         return UUID.randomUUID().toString();

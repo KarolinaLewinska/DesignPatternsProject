@@ -10,7 +10,7 @@ import java.awt.Color;
 import java.nio.file.Path;
 
 public class PdfDocumentManager extends DocumentManager {
-    Document pdfDocument;
+    private Document pdfDocument;
 
     public PdfDocumentManager() {
         this.pdfDocument = new Document();

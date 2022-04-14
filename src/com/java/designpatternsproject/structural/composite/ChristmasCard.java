@@ -11,7 +11,7 @@ public class ChristmasCard extends Card {
     }
 
     @Override
-    void printCardData() {
+    public void printCardData() {
         System.out.println("Card id: " + cardId + "\n"
                 + "Creation date: " + creationDate + "\n"
                 + "Validation date: " + validationDate + "\n"

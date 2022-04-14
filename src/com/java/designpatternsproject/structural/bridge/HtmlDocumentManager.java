@@ -4,7 +4,7 @@ import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 
 public class HtmlDocumentManager extends DocumentManager {
-    HTMLDocument htmlDocument = new HTMLDocument();
+    private HTMLDocument htmlDocument = new HTMLDocument();
 
     @Override
     public void addText(String text) {

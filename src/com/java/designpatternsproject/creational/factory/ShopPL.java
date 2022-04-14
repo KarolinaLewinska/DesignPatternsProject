@@ -1,7 +1,7 @@
 package com.java.designpatternsproject.creational.factory;
 
 public class ShopPL extends Shop {
-    String nipNumber;
+    private String nipNumber;
 
     public String getNipNumber() {
         return nipNumber;

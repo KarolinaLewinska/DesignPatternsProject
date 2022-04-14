@@ -1,7 +1,7 @@
 package com.java.designpatternsproject.structural.adapter;
 
 public class Number {
-    long valueToConvert;
+    public long valueToConvert;
 
     public Number(long valueToConvert) {
         this.valueToConvert = valueToConvert;

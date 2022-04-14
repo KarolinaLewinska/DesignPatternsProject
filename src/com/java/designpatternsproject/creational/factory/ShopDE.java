@@ -1,7 +1,7 @@
 package com.java.designpatternsproject.creational.factory;
 
 public class ShopDE extends  Shop {
-    String taxIdNumber;
+    private String taxIdNumber;
 
     public String getIdNumber() {
         return taxIdNumber;

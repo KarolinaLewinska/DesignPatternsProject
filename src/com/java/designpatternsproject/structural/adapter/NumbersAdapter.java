@@ -3,7 +3,7 @@ package com.java.designpatternsproject.structural.adapter;
 import java.nio.charset.StandardCharsets;
 
 public class NumbersAdapter extends BinaryValue {
-    Number numberToConvert;
+    private Number numberToConvert;
 
     public NumbersAdapter(Number numberToConvert) {
         this.numberToConvert = numberToConvert;

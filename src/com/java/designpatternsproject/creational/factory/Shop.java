@@ -1,12 +1,12 @@
 package com.java.designpatternsproject.creational.factory;
 
 public abstract class Shop {
-    public int shopCode;
-    public String address;
-    public String city;
-    public String phoneNumber;
-    public String email;
-    public String mainCurrency;
+    private int shopCode;
+    private String address;
+    private String city;
+    private String phoneNumber;
+    private String email;
+    private String mainCurrency;
 
     public int getShopCode() {
         return shopCode;
