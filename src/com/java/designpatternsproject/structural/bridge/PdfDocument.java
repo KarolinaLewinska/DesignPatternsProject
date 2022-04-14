@@ -1,16 +1,18 @@
 package com.java.designpatternsproject.structural.bridge;
 
-import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.Document;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 public class PdfDocument extends PrimeDocument {
     public PdfDocument(String fileName, DocumentManager documentManager) {
         super(documentManager);
-        createPDFDocument(fileName);
+        try {
+            createPDFDocument(fileName);
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
     }
 
     @Override
@@ -18,14 +20,15 @@ public class PdfDocument extends PrimeDocument {
         documentManager.addText(text);
     }
 
-    private Document createPDFDocument(String fileName)  {
+    private Document createPDFDocument(String fileName) throws Exception {
         setDocumentFields(fileName);
         try {
             Document pdfDoc = new Document();
             PdfWriter.getInstance(pdfDoc, new FileOutputStream(fileName + extension));
             return pdfDoc;
-        } catch (FileNotFoundException | DocumentException exc ) {
-            throw new RuntimeException("Exception occurred during creating pdf document");
+        } catch (Exception exc) {
+            exc.printStackTrace();
+            throw new Exception("Exception occurred during creating pdf document");
         }
     }
 

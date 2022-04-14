@@ -1,16 +1,18 @@
 package com.java.designpatternsproject.structural.bridge;
 
-import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
-import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 
 public class HtmlDocument extends PrimeDocument {
     public HtmlDocument(String fileName, DocumentManager documentManager) {
         super(documentManager);
-        createHTMLDocument(fileName);
+        try {
+            createHTMLDocument(fileName);
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
     }
 
     @Override
@@ -18,7 +20,7 @@ public class HtmlDocument extends PrimeDocument {
         documentManager.addText(text);
     }
 
-    private HTMLDocument createHTMLDocument(String fileName)  {
+    private HTMLDocument createHTMLDocument(String fileName) throws Exception {
        setDocumentFields(fileName);
 
         try {
@@ -34,8 +36,9 @@ public class HtmlDocument extends PrimeDocument {
             HTMLDocument htmlDocument = (HTMLDocument) htmlEditorKit.createDefaultDocument();
             htmlEditorKit.read(stringReader, htmlDocument, 0);
             return htmlDocument;
-        } catch (IOException | BadLocationException exc) {
-            throw new RuntimeException("Exception occurred during creating html document");
+        } catch (Exception exc) {
+            exc.printStackTrace();
+            throw new Exception("Exception occurred during creating html document");
         }
     }
 

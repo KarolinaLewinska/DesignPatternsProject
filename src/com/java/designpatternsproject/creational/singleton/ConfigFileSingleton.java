@@ -22,14 +22,15 @@ public class ConfigFileSingleton {
 
     private ConfigFileSingleton() throws IOException {}
 
-    public static synchronized ConfigFileSingleton getInstance() throws IOException {
+    public static synchronized ConfigFileSingleton getInstance() throws Exception {
         try {
             if (configFileSingletonInstance == null) {
                 configFileSingletonInstance = new ConfigFileSingleton();
             }
             return configFileSingletonInstance;
-        } catch (RuntimeException exc) {
-            throw new RuntimeException("Exception occurred during creating singleton instance");
+        } catch (Exception exc) {
+            exc.printStackTrace();
+            throw new Exception("Exception occurred during creating singleton instance");
         }
     }
 

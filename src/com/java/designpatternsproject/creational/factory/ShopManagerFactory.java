@@ -6,9 +6,8 @@ public class ShopManagerFactory {
             return new ShopDE();
         } else if (ShopCountryCodeEnum.UNITED_KINGDOM.COUNTRY_CODE.equals(countryCode)) {
             return new ShopUK();
-        } else if (ShopCountryCodeEnum.POLAND.COUNTRY_CODE.equals(countryCode)) {
-            return  new ShopPL();
+        } else {
+            return new ShopPL();
         }
-        return null;
     }
 }

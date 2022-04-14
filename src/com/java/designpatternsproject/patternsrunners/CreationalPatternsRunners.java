@@ -13,7 +13,6 @@ import com.java.designpatternsproject.creational.singleton.ConfigFileSingleton;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 
 public class CreationalPatternsRunners {
 
@@ -24,8 +23,8 @@ public class CreationalPatternsRunners {
             if (configFileInstance.getConfigFilePath() == configFileInstance2.getConfigFilePath()) {
                 System.out.println("Only one instance of db config file");
             }
-        } catch (IOException exc) {
-            throw new RuntimeException("Exception occurred during creating singleton instance");
+        } catch (Exception exc) {
+            exc.printStackTrace();
         }
     }
 
@@ -71,8 +70,8 @@ public class CreationalPatternsRunners {
                 System.out.println(clonePNG.imgName + " is the copy of " + imagePNG.imgName);
                 System.out.println(cloneJPG.imgName + " is the copy of " + imageJPG.imgName);
             }
-        } catch (IOException exc) {
-            throw new RuntimeException("Exception occurred during loading image file");
+        } catch (Exception exc) {
+            exc.printStackTrace();
         }
     }
 }
