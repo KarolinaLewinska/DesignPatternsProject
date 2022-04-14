@@ -24,13 +24,10 @@ public class HtmlDocument extends PrimeDocument {
        setDocumentFields(fileName);
 
         try {
-            String htmlStructure = "<html> \n" +
-                    "<head> \n" +
-                    "<title>" + fileName + "</title> \n" +
-                    "</head> \n" +
-                    "<body> \n" +
-                    "</body> \n" +
-                    "</html> ";
+            String htmlStructure = "<html> \n"
+                    + "<head> \n" + "<title>" + fileName + "</title> \n" + "</head> \n"
+                    + "<body> \n" + "</body> \n"
+                    + "</html> ";
             Reader stringReader = new StringReader(htmlStructure);
             HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
             HTMLDocument htmlDocument = (HTMLDocument) htmlEditorKit.createDefaultDocument();

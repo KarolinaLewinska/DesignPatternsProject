@@ -59,10 +59,8 @@ public class CreationalPatternsRunners {
         try {
             BufferedImage bufferedPNG = ImageIO.read(new File("src/com/java/designpatternsproject/creational/prototype/explosion.png"));
             BufferedImage bufferedJPG = ImageIO.read(new File("src/com/java/designpatternsproject/creational/prototype/owl.jpeg"));
-
             ImagePNG imagePNG = new ImagePNG("explosion", ".png", bufferedPNG);
             ImagePNG clonePNG = (ImagePNG) imagePNG.clone();
-
             ImageJPG imageJPG = new ImageJPG("owl", ".jpeg", bufferedJPG);
             ImageJPG cloneJPG = (ImageJPG) imageJPG.clone();
 

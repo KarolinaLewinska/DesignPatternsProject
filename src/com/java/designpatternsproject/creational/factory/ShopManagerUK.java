@@ -7,11 +7,11 @@ public class ShopManagerUK implements ShopManager {
 
         System.out.println("United Kingdom shop data");
         System.out.println("Address: " + shopUK.getAddress() + "\n"
-                + "Phone number: " + shopUK.getPhoneNumber() + "\n" +
-                "Email: " + shopUK.getEmail() + "\n" +
-                "Main currency: " + shopUK.getMainCurrency() + "\n" +
-                "City: " + shopUK.getCity() + "\n" +
-                "Shop code: " + shopUK.getShopCode() + "\n"
+                + "Phone number: " + shopUK.getPhoneNumber() + "\n"
+                + "Email: " + shopUK.getEmail() + "\n"
+                + "Main currency: " + shopUK.getMainCurrency() + "\n"
+                + "City: " + shopUK.getCity() + "\n"
+                + "Shop code: " + shopUK.getShopCode() + "\n"
                 + "NIP number: " + shopUK.getNinNumber() + "\n");
     }
 }
