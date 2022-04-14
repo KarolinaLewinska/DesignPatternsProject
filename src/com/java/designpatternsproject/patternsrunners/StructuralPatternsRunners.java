@@ -9,6 +9,13 @@ import com.java.designpatternsproject.structural.bridge.DocumentManager;
 import com.java.designpatternsproject.structural.bridge.PdfDocument;
 import com.java.designpatternsproject.structural.bridge.PdfDocumentManager;
 import com.java.designpatternsproject.structural.bridge.PrimeDocument;
+import com.java.designpatternsproject.structural.composite.Card;
+import com.java.designpatternsproject.structural.composite.ChristmasCard;
+import com.java.designpatternsproject.structural.composite.EmployeeCard;
+import com.java.designpatternsproject.structural.composite.GiftCard;
+import com.java.designpatternsproject.structural.composite.ShoppingCard;
+
+import java.math.BigDecimal;
 
 public class StructuralPatternsRunners {
 
@@ -25,5 +32,20 @@ public class StructuralPatternsRunners {
         DocumentManager documentPdfManager = new PdfDocumentManager();
         PrimeDocument pdfDocument = new PdfDocument("document.pdf", documentPdfManager);
         pdfDocument.addTextToFile("Lorem ipsum dolor sit amet");
+    }
+
+    public static void runComposite() {
+        Card christmasCard = new ChristmasCard(new BigDecimal("50"));
+        Card giftCard = new GiftCard(new BigDecimal("150"));
+        Card employeeCard = new EmployeeCard(new BigDecimal("200"));
+
+        ShoppingCard shoppingCard = new ShoppingCard();
+        shoppingCard.addCardToList(christmasCard);
+        shoppingCard.addCardToList(giftCard);
+        shoppingCard.addCardToList(employeeCard);
+        shoppingCard.printCardData();
+        shoppingCard.removeCardFromList(christmasCard);
+        shoppingCard.removeCardFromList(giftCard);
+        shoppingCard.printCardData();
     }
 }

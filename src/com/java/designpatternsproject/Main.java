@@ -11,5 +11,6 @@ public class Main {
 
         StructuralPatternsRunners.runAdapter();
         StructuralPatternsRunners.runBridge();
+        StructuralPatternsRunners.runComposite();
     }
 }
