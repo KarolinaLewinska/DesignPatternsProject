@@ -10,5 +10,6 @@ public class Main {
         CreationalPatternsRunners.runPrototype();
 
         StructuralPatternsRunners.runAdapter();
+        StructuralPatternsRunners.runBridge();
     }
 }
