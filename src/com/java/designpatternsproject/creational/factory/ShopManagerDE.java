@@ -12,6 +12,6 @@ public class ShopManagerDE extends ShopManager {
             "Main currency: " + shopDE.getMainCurrency() + "\n" +
             "City: " + shopDE.getCity() + "\n" +
             "Shop code: " + shopDE.getShopCode() + "\n"
-            + "Tax id: " + shopDE.getIdNumber());
+            + "Tax id: " + shopDE.getIdNumber() + "\n");
     }
 }

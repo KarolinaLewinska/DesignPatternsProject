@@ -21,7 +21,7 @@ public class CreationalPatternsRunners {
             ConfigFileSingleton configFileInstance = ConfigFileSingleton.getInstance();
             ConfigFileSingleton configFileInstance2 = ConfigFileSingleton.getInstance();
             if (configFileInstance.getConfigFilePath() == configFileInstance2.getConfigFilePath()) {
-                System.out.println("Only one instance of db config file");
+                System.out.println("Only one instance of db config file \n");
             }
         } catch (Exception exc) {
             exc.printStackTrace();
@@ -68,7 +68,7 @@ public class CreationalPatternsRunners {
 
             if (imagePNG.imgName.equals(clonePNG.imgName) && imageJPG.picture == cloneJPG.picture) {
                 System.out.println(clonePNG.imgName + " is the copy of " + imagePNG.imgName);
-                System.out.println(cloneJPG.imgName + " is the copy of " + imageJPG.imgName);
+                System.out.println(cloneJPG.imgName + " is the copy of " + imageJPG.imgName + "\n");
             }
         } catch (Exception exc) {
             exc.printStackTrace();

@@ -24,7 +24,7 @@ public class PdfDocumentManager extends DocumentManager {
             Chunk textChunk = new Chunk(text, font);
             pdfDocument.add(textChunk);
             pdfDocument.close();
-            System.out.println("Added text: " + textChunk + " to pdf document");
+            System.out.println("Added text:\n" + textChunk + " to pdf document");
         } catch (Exception exc) {
             exc.printStackTrace();
         }

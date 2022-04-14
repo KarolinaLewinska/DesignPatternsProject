@@ -22,6 +22,6 @@ public class NumbersAdapter extends BinaryValue {
     @Override
     public void printInfo() {
         System.out.println("Representation of number: " + numberToConvert.valueToConvert + " equals: " + getValueInBinaryString());
-        System.out.println("Length of bytes is: " + getBytesLength());
+        System.out.println("Length of bytes is: " + getBytesLength() + "\n");
     }
 }

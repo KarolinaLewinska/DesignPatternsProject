@@ -12,6 +12,6 @@ public class ShopManagerUK extends ShopManager {
                 "Main currency: " + shopUK.getMainCurrency() + "\n" +
                 "City: " + shopUK.getCity() + "\n" +
                 "Shop code: " + shopUK.getShopCode() + "\n"
-                + "NIP number: " + shopUK.getNinNumber());
+                + "NIP number: " + shopUK.getNinNumber() + "\n");
     }
 }
