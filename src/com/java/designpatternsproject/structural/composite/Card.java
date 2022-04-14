@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public abstract class Card {
-    private final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     protected String cardId;
     protected String creationDate;
     protected String validationDate;

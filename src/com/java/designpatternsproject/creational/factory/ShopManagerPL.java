@@ -1,6 +1,6 @@
 package com.java.designpatternsproject.creational.factory;
 
-public class ShopManagerPL extends ShopManager {
+public class ShopManagerPL implements ShopManager {
     @Override
     public void showShopData(Shop shop) {
         ShopPL shopPL = (ShopPL) shop;
