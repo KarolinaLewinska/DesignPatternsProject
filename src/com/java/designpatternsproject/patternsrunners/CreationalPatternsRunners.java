@@ -5,7 +5,9 @@ import com.java.designpatternsproject.creational.factory.ShopDE;
 import com.java.designpatternsproject.creational.factory.ShopManagerDE;
 import com.java.designpatternsproject.creational.factory.ShopManagerFactory;
 import com.java.designpatternsproject.creational.factory.ShopManagerPL;
+import com.java.designpatternsproject.creational.factory.ShopManagerUK;
 import com.java.designpatternsproject.creational.factory.ShopPL;
+import com.java.designpatternsproject.creational.factory.ShopUK;
 import com.java.designpatternsproject.creational.prototype.ImageJPG;
 import com.java.designpatternsproject.creational.prototype.ImagePNG;
 import com.java.designpatternsproject.creational.singleton.ConfigFileSingleton;
@@ -15,7 +17,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class CreationalPatternsRunners {
-
     public static void runSingleton() {
         try {
             ConfigFileSingleton configFileInstance = ConfigFileSingleton.getInstance();
@@ -53,6 +54,18 @@ public class CreationalPatternsRunners {
         ShopPL shopPLCasted = (ShopPL) shopPL;
         shopPLCasted.setNipNumber("09845943212");
         shopManagerPL.showShopData(shopPL);
+
+        ShopManagerUK shopManagerUK = new ShopManagerUK();
+        Shop shopUK = factory.getShop("UK");
+        shopUK.setShopCode(58594);
+        shopUK.setAddress("Howard Street Oswego");
+        shopUK.setCity("London");
+        shopUK.setPhoneNumber("+44 7911 123456");
+        shopUK.setEmail("shop-max-uk@gmail.com");
+        shopUK.setMainCurrency("GBP");
+        ShopUK shopUKCasted = (ShopUK) shopUK;
+        shopUKCasted.setNinNumber("54845059212");
+        shopManagerUK.showShopData(shopUK);
     }
 
     public static void runPrototype() {

@@ -2,11 +2,8 @@ package com.java.designpatternsproject.structural.bridge;
 
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Image;
 
-import java.awt.Color;
 import java.nio.file.Path;
 
 public class PdfDocumentManager extends DocumentManager {
@@ -20,11 +17,10 @@ public class PdfDocumentManager extends DocumentManager {
     public void addText(String text) {
         try {
             pdfDocument.open();
-            Font font = FontFactory.getFont(FontFactory.HELVETICA, 12, Color.BLACK);
-            Chunk textChunk = new Chunk(text, font);
+            Chunk textChunk = new Chunk(text);
             pdfDocument.add(textChunk);
             pdfDocument.close();
-            System.out.println("Added text:\n" + textChunk + " to pdf document");
+            System.out.println("Added text:\n" + textChunk + " to PDF document\n");
         } catch (Exception exc) {
             exc.printStackTrace();
         }

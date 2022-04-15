@@ -18,7 +18,6 @@ import com.java.designpatternsproject.structural.composite.ShoppingCard;
 import java.math.BigDecimal;
 
 public class StructuralPatternsRunners {
-
     public static void runAdapter() {
         BinaryValue binaryValue = new NumbersAdapter(new Number(1010463435));
         binaryValue.printInfo();

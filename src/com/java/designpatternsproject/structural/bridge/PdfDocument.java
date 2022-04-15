@@ -28,7 +28,7 @@ public class PdfDocument extends PrimeDocument {
             return pdfDoc;
         } catch (Exception exc) {
             exc.printStackTrace();
-            throw new Exception("Exception occurred during creating pdf document");
+            throw new Exception("Exception occurred during creating PDF document");
         }
     }
 

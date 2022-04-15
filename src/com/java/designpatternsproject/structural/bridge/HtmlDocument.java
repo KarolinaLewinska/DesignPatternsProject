@@ -22,20 +22,17 @@ public class HtmlDocument extends PrimeDocument {
 
     private HTMLDocument createHTMLDocument(String fileName) throws Exception {
        setDocumentFields(fileName);
-
-        try {
-            String htmlStructure = "<html> \n"
-                    + "<head> \n" + "<title>" + fileName + "</title> \n" + "</head> \n"
-                    + "<body> \n" + "</body> \n"
-                    + "</html> ";
-            Reader stringReader = new StringReader(htmlStructure);
-            HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
-            HTMLDocument htmlDocument = (HTMLDocument) htmlEditorKit.createDefaultDocument();
-            htmlEditorKit.read(stringReader, htmlDocument, 0);
-            return htmlDocument;
+       try {
+           String htmlStructure = "<html> \n" + "<head> \n" + "<title>" + fileName + "</title> \n" + "</head> \n"
+                   + "<body> \n" + "</body> \n" + "</html> ";
+           Reader stringReader = new StringReader(htmlStructure);
+           HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
+           HTMLDocument htmlDocument = (HTMLDocument) htmlEditorKit.createDefaultDocument();
+           htmlEditorKit.read(stringReader, htmlDocument, 0);
+           return htmlDocument;
         } catch (Exception exc) {
             exc.printStackTrace();
-            throw new Exception("Exception occurred during creating html document");
+            throw new Exception("Exception occurred during creating HTML document");
         }
     }
 

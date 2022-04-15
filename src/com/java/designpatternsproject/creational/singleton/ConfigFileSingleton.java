@@ -13,7 +13,8 @@ public class ConfigFileSingleton {
 
     private static final Path CONFIG_FILE_PATH = FileSystems.getDefault()
             .getPath("src/com/java/designpatternsproject/creational/singleton/", "dbconfig.txt");
-    private static final BasicFileAttributeView FILE_ATR_VIEW = Files.getFileAttributeView(CONFIG_FILE_PATH, BasicFileAttributeView.class);
+    private final BasicFileAttributeView FILE_ATR_VIEW =
+            Files.getFileAttributeView(CONFIG_FILE_PATH, BasicFileAttributeView.class);
     private final BasicFileAttributes FILE_ATTR = FILE_ATR_VIEW.readAttributes();
 
     private Date creationTime = new Date(FILE_ATTR.creationTime().toMillis());
