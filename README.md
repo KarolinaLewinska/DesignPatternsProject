@@ -9,5 +9,6 @@ Own implementations of desing patterns
 ## Structural patterns
 - Adapter
 - Bridge
+- Composite
 
 ## Behavioral patterns
