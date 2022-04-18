@@ -1,7 +1,9 @@
 package com.java.designpatternsproject.structural.bridge;
 
+import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
+import java.io.IOException;
 
 public class HtmlDocumentManager extends DocumentManager {
     private HTMLDocument htmlDocument;
@@ -16,7 +18,7 @@ public class HtmlDocumentManager extends DocumentManager {
             HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
             htmlEditorKit.insertHTML(htmlDocument, htmlDocument.getLength(), "<p>" + text + "</p>", 0, 0, null);
             System.out.println("Added text: " + htmlDocument.getText(0,htmlDocument.getLength()) + " to HTML document\n");
-        }  catch (Exception exc) {
+        }  catch (IOException | BadLocationException exc) {
             exc.printStackTrace();
         }
     }
@@ -25,7 +27,7 @@ public class HtmlDocumentManager extends DocumentManager {
         try {
             String allDocumentText = htmlDocument.getText(0, htmlDocument.getLength());
             return allDocumentText.replaceAll("\\<.*?\\>", "");
-        } catch (Exception exc) {
+        } catch (BadLocationException exc) {
             exc.printStackTrace();
             throw new Exception("Exception occurred during removing HTML tags from document");
         }

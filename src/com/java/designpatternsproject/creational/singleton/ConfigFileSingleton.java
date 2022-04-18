@@ -24,16 +24,11 @@ public class ConfigFileSingleton {
 
     private ConfigFileSingleton() throws IOException {}
 
-    public static synchronized ConfigFileSingleton getInstance() throws Exception {
-        try {
+    public static synchronized ConfigFileSingleton getInstance() throws IOException {
             if (CONFIG_FILE_INSTANCE == null) {
                 CONFIG_FILE_INSTANCE = new ConfigFileSingleton();
             }
             return CONFIG_FILE_INSTANCE;
-        } catch (Exception exc) {
-            exc.printStackTrace();
-            throw new Exception("Exception occurred during creating singleton instance");
-        }
     }
 
     public Path getConfigFilePath() {

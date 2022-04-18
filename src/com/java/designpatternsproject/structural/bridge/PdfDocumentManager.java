@@ -2,8 +2,10 @@ package com.java.designpatternsproject.structural.bridge;
 
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Image;
 
+import java.io.IOException;
 import java.nio.file.Path;
 
 public class PdfDocumentManager extends DocumentManager {
@@ -21,7 +23,7 @@ public class PdfDocumentManager extends DocumentManager {
             pdfDocument.add(textChunk);
             pdfDocument.close();
             System.out.println("Added text:\n" + textChunk + " to PDF document\n");
-        } catch (Exception exc) {
+        } catch (DocumentException exc) {
             exc.printStackTrace();
         }
     }
@@ -32,7 +34,7 @@ public class PdfDocumentManager extends DocumentManager {
             Image imgToAdd = Image.getInstance(pathToImage.toAbsolutePath().toString());
             pdfDocument.add(imgToAdd);
             pdfDocument.close();
-        } catch (Exception exc) {
+        } catch (DocumentException | IOException exc) {
             exc.printStackTrace();
         }
     }
