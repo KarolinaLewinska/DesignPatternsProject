@@ -5,6 +5,8 @@ Own implementations of desing patterns
 - Singleton
 - Factory
 - Prototype
+- Builder
+- Abstract Factory
 
 ## Structural patterns
 - Adapter
