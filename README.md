@@ -12,5 +12,14 @@ Own implementations of desing patterns
 - Adapter
 - Bridge
 - Composite
+- Facade
+- Flyweight
+- Proxy
 
 ## Behavioral patterns
+- Command
+- Iterator
+- Mediator
+- Observer
+- Strategy
+- Template Method
