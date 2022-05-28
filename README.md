@@ -1,5 +1,5 @@
 # Design Patterns Project
-Own implementations of desing patterns
+Karolina Lewińska, Aleksandra Okrój</br>
 
 ## Creational patterns
 - Singleton
