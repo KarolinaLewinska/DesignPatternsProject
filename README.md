@@ -15,6 +15,7 @@ Own implementations of desing patterns
 - Facade
 - Flyweight
 - Proxy
+- Decorator
 
 ## Behavioral patterns
 - Command
@@ -23,3 +24,8 @@ Own implementations of desing patterns
 - Observer
 - Strategy
 - Template Method
+- Chain of Responsibility
+- Interpreter
+- Memento
+- State
+- Visitor
