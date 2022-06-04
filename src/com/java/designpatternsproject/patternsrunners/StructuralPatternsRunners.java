@@ -14,6 +14,13 @@ import com.java.designpatternsproject.structural.composite.ChristmasCard;
 import com.java.designpatternsproject.structural.composite.EmployeeCard;
 import com.java.designpatternsproject.structural.composite.GiftCard;
 import com.java.designpatternsproject.structural.composite.ShoppingCard;
+import com.java.designpatternsproject.structural.decorator.ManagerCandidate;
+import com.java.designpatternsproject.structural.decorator.InternCandidate;
+import com.java.designpatternsproject.structural.decorator.Eligible;
+import com.java.designpatternsproject.structural.facade.CouponApplier;
+import com.java.designpatternsproject.structural.facade.Client;
+import com.java.designpatternsproject.structural.flyweight.ParticleFactory;
+import com.java.designpatternsproject.structural.proxy.Proxy;
 
 import java.math.BigDecimal;
 
@@ -46,5 +53,55 @@ public class StructuralPatternsRunners {
         shoppingCard.removeCardFromList(christmasCard);
         shoppingCard.removeCardFromList(giftCard);
         shoppingCard.printCardData();
+    }
+
+    public static void runDecorator(){
+        ManagerCandidate candidate1 = new ManagerCandidate("Jane", "Austin", 32, 10);
+        InternCandidate candidate2 = new InternCandidate("John", "Doe", 21, "Computer Science", 2);
+
+        candidate1.showCandidate();
+        candidate2.showCandidate();
+
+        Eligible hiredCandidate = new Eligible(candidate1);
+        hiredCandidate.hire();
+        hiredCandidate.showCandidate();
+    }
+
+    public static void runFacade(){
+        CouponApplier couponApplier = new CouponApplier();
+        Client client = new Client("Annx");
+
+        boolean canCouponBeApplied = couponApplier.canCouponBeApplied(client,3,350,550);
+
+        System.out.println(canCouponBeApplied ? "Coupon for -20% off was applied!" : "The coupon is not available");
+    }
+
+    public static void runFlyweight(){
+        int[] coordinatesX = new int[]{15, 4, 63, 22};
+        int[] coordinatesY = new int[]{13, -1, 2, 64};
+        int size = 1;
+
+        ParticleFactory factory = new ParticleFactory(coordinatesX, coordinatesY, size);
+
+        for(int i = 0; i<coordinatesX.length; i++){
+            if(coordinatesY.length < i) break;
+            factory.getParticle(coordinatesX[i], coordinatesY[i]).createParticle();
+        }
+
+        System.out.println("Default size particles: ");
+
+        ParticleFactory factoryWithDefaultSizeParticles = new ParticleFactory(coordinatesX, coordinatesY);
+        for(int i = 0; i<coordinatesX.length; i++){
+            if(coordinatesY.length< i) break;
+            factoryWithDefaultSizeParticles.getParticle(coordinatesX[i], coordinatesY[i]).createParticle();
+        }
+    }
+
+    public static void runProxy(){
+        Proxy proxy1 = new Proxy(11);
+        Proxy proxy2 = new Proxy(17);
+
+        proxy1.WatchMovie();
+        proxy2.WatchMovie();
     }
 }

@@ -9,10 +9,16 @@ public class Main {
         CreationalPatternsRunners.runSingleton();
         CreationalPatternsRunners.runFactory();
         CreationalPatternsRunners.runPrototype();
+        CreationalPatternsRunners.runAbstractFactory();
+        CreationalPatternsRunners.runBuilder();
 
         StructuralPatternsRunners.runAdapter();
         StructuralPatternsRunners.runBridge();
         StructuralPatternsRunners.runComposite();
+        StructuralPatternsRunners.runDecorator();
+        StructuralPatternsRunners.runFacade();
+        StructuralPatternsRunners.runFlyweight();
+        StructuralPatternsRunners.runProxy();
 
         BehavioralPatternsRunners.runIterator();
         BehavioralPatternsRunners.runTemplateMethod();
@@ -20,5 +26,10 @@ public class Main {
         BehavioralPatternsRunners.runMediator();
         BehavioralPatternsRunners.runObserver();
         BehavioralPatternsRunners.runStrategy();
+        BehavioralPatternsRunners.runChainOfResponsibility();
+        BehavioralPatternsRunners.runInterpreter();
+        BehavioralPatternsRunners.runMemento();
+        BehavioralPatternsRunners.runState();
+        BehavioralPatternsRunners.runVisitor();
     }
 }

@@ -1,5 +1,16 @@
 package com.java.designpatternsproject.patternsrunners;
 
+import com.java.designpatternsproject.creational.abstractFactory.ClothingFactory;
+import com.java.designpatternsproject.creational.abstractFactory.ClothingType;
+import com.java.designpatternsproject.creational.abstractFactory.CasualClothingFactory;
+import com.java.designpatternsproject.creational.abstractFactory.FormalClothingFactory;
+import com.java.designpatternsproject.creational.abstractFactory.WomansClothing;
+import com.java.designpatternsproject.creational.abstractFactory.MansClothing;
+import com.java.designpatternsproject.creational.abstractFactory.ChildrensClothing;
+import com.java.designpatternsproject.creational.builder.Director;
+import com.java.designpatternsproject.creational.builder.StudentInfoBuilder;
+import com.java.designpatternsproject.creational.builder.LocalStudentInfoBuilder;
+import com.java.designpatternsproject.creational.builder.InternationalStudentInfoBuilder;
 import com.java.designpatternsproject.creational.factory.Shop;
 import com.java.designpatternsproject.creational.factory.ShopDE;
 import com.java.designpatternsproject.creational.factory.ShopManagerDE;
@@ -85,5 +96,46 @@ public class CreationalPatternsRunners {
         } catch (IOException exc) {
             exc.printStackTrace();
         }
+    }
+
+    public static void runAbstractFactory(){
+        ClothingFactory casualClothingFactory = new CasualClothingFactory();
+        ClothingFactory formalClothingFactory = new FormalClothingFactory();
+
+        WomansClothing casualPants = casualClothingFactory.addWomansClothing(ClothingType.PANTS);
+        MansClothing casualShirt = casualClothingFactory.addMansClothing(ClothingType.SHIRT);
+        ChildrensClothing casualJacket = casualClothingFactory.addChildrensClothing(ClothingType.JACKET);
+
+        WomansClothing formalPants = formalClothingFactory.addWomansClothing(ClothingType.PANTS);
+        MansClothing formalShirt = formalClothingFactory.addMansClothing(ClothingType.SHIRT);
+        ChildrensClothing formalJacket = formalClothingFactory.addChildrensClothing(ClothingType.JACKET);
+
+        System.out.println("Womans pants: \n"
+        + "Size: " + casualPants.size + " Color: " + casualPants.color + " Style: " + casualPants.style);
+        System.out.println("Size: " + formalPants.size + " Color: " + formalPants.color + " Style: " + formalPants.style);
+
+        System.out.println("Mans shirts: \n"
+                + "Size: " + casualShirt.size + " Color: " + casualShirt.color + " Style: " + casualShirt.style);
+        System.out.println("Size: " + formalShirt.size + " Color: " + formalShirt.color + " Style: " + formalShirt.style);
+
+        System.out.println("Childrens jackets: \n"
+                + "Size: " + casualJacket.size + " Color: " + casualJacket.color + " Style: " + casualJacket.style);
+        System.out.println("Size: " + formalJacket.size + " Color: " + formalJacket.color + " Style: " + formalJacket.style);
+    }
+
+    public static void runBuilder(){
+        Director director = new Director();
+
+        StudentInfoBuilder student1 = new LocalStudentInfoBuilder();
+        StudentInfoBuilder student2 = new InternationalStudentInfoBuilder();
+
+        director.buildStudentInfo(student1);
+
+        student1.ReturnStudentInfo().showStudentInfo();
+
+        director.buildStudentInfo(student2);
+
+        student2.ReturnStudentInfo().showStudentInfo();
+    }
     }
 }
